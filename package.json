@@ -9,7 +9,21 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "bootstrap": "^5.2.0",
+    "dexie": "^3.2.2",
+    "dexie-react-hooks": "^1.1.1",
+    "dexie-relationships": "^1.2.11",
+    "font-awesome": "^4.7.0",
+    "indexeddb-export-import": "^2.1.5",
+    "react-bootstrap": "^2.5.0",
+    "react-indexed-db": "^1.0.12",
+    "react-router-dom": "^6.3.0",
+    "react-to-print": "^2.14.7",
+    "sweetalert2": "^11.4.29"
   },
   "scripts": {
     "start": "react-scripts start",

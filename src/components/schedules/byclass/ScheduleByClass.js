@@ -19,7 +19,120 @@ import '../ToPrint.css'
 import TdToPrint from './TdToPrintByClass';
 
 export default function ScheduleByClass() {
-
+    function organise(item,day,data,setdata){
+        if(item.weekday == day){
+          if(item.start_time == "08:00:00"){
+              if(item.end_time == "12:00:00"){
+                setdata((data)=>({...data,h_8_9:item,h_9_10:item,h_10_11:item,h_11_12:item}))
+              }else
+              if(item.end_time == "11:00:00"){
+                setdata((data)=>({...data,h_8_9:item,h_9_10:item,h_10_11:item}))
+              }else
+              if(item.end_time == "10:00:00"){
+                setdata((data)=>({...data,h_8_9:item,h_9_10:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_8_9:item}))
+              }
+    
+          }
+          else
+          if(item.start_time == "09:00:00"){
+              if(item.end_time == "13:00:00"){
+                setdata((data)=>({...data,h_9_10:item,h_10_11:item,h_11_12:item,h_12_13:item}))
+              }else
+              if(item.end_time == "12:00:00"){
+                setdata((data)=>({...data,h_9_10:item,h_10_11:item,h_11_12:item}))
+              }else
+              if(item.end_time == "11:00:00"){
+                setdata((data)=>({...data,h_9_10:item,h_10_11:item}))
+              }
+              else{
+    
+                setdata((data)=>({...data,h_9_10:item}))
+              }
+          }else
+          if(item.start_time == "10:00:00"){
+              if(item.end_time == "14:00:00"){
+                setdata((data)=>({...data,h_10_11:item,h_11_12:item,h_12_13:item,h_13_14:item}))
+              }else
+              if(item.end_time == "13:00:00"){
+                setdata((data)=>({...data,h_10_11:item,h_11_12:item,h_12_13:item}))
+              }else
+              if(item.end_time == "12:00:00"){
+    
+                setdata((data)=>({...data,h_10_11:item,h_11_12:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_10_11:item}))
+              }
+          }else
+          if(item.start_time == "11:00:00"){
+              if(item.end_time == "15:00:00"){
+                setdata((data)=>({...data,h_11_12:item,h_12_13:item,h_13_14:item,h_14_15:item}))
+              }else
+              if(item.end_time == "14:00:00"){
+                setdata((data)=>({...data,h_11_12:item,h_12_13:item,h_13_14:item}))
+              }else
+              if(item.end_time == "13:00:00"){
+                setdata((data)=>({...data,h_11_12:item,h_12_13:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_11_12:item}))
+              }
+          }else
+          if(item.start_time == "12:00:00"){
+              if(item.end_time == "16:00:00"){
+                setdata((data)=>({...data,h_12_13:item,h_13_14:item,h_14_15:item,h_15_16:item}))
+              }else
+              if(item.end_time == "15:00:00"){
+                setdata((data)=>({...data,h_12_13:item,h_13_14:item,h_14_15:item}))
+              }else
+              if(item.end_time == "14:00:00"){
+                setdata((data)=>({...data,h_12_13:item,h_13_14:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_12_13:item}))
+              }
+          }else
+          if(item.start_time == "13:00:00"){
+              if(item.end_time == "17:00:00"){
+                setdata((data)=>({...data,h_13_14:item,h_14_15:item,h_15_16:item,h_16_17:item}))
+              }else
+              if(item.end_time == "16:00:00"){
+                setdata((data)=>({...data,h_13_14:item,h_14_15:item,h_15_16:item}))
+              }else
+              if(item.end_time == "15:00:00"){
+                setdata((data)=>({...data,h_13_14:item,h_14_15:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_13_14:item}))
+              }
+          }else
+          if(item.start_time == "14:00:00"){
+              if(item.end_time == "17:00:00"){
+                setdata((data)=>({...data,h_14_15:item,h_15_16:item,h_16_17:item}))
+              }else
+              if(item.end_time == "16:00:00"){
+                setdata((data)=>({...data,h_14_15:item,h_15_16:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_14_15:item}))
+              }
+          }else
+          if(item.start_time == "15:00:00"){
+              if(item.end_time == "17:00:00"){
+                setdata((data)=>({...data,h_15_16:item,h_16_17:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_15_16:item}))
+              }
+          }
+          else if(item.start_time == "16:00:00"){
+                setdata((data)=>({...data,h_16_17:item}))
+          }
+      }
+      }
     const [monday, setMonday] = useState({
         h_8_9:{},
         h_9_10:{},
@@ -243,682 +356,18 @@ export default function ScheduleByClass() {
                                 h_15_16:{},
                                 h_16_17:{},})
         itemsList.map((item)=>{
-            // monday
-            if(item.weekday == "Monday"){
-                if(item.start_time == "08:00:00"){
-                    if(item.end_time == "12:00:00"){
-                        setMonday((monday)=>({...monday,h_8_9:item,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setMonday((monday)=>({...monday,h_8_9:item,h_9_10:item,h_10_11:item}))
-                    }else
-                    if(item.end_time == "10:00:00"){
-                        setMonday((monday)=>({...monday,h_8_9:item,h_9_10:item}))
-                    }
-                    else{
-                        setMonday((monday)=>({...monday,h_8_9:item}))
-                    }
-
-                }
-                if(item.start_time == "09:00:00"){
-                    if(item.end_time == "13:00:00"){
-                        setMonday((monday)=>({...monday,h_9_10:item,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-                        setMonday((monday)=>({...monday,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setMonday((monday)=>({...monday,h_9_10:item,h_10_11:item}))
-                    }
-                    else{
-
-                        setMonday((monday)=>({...monday,h_9_10:item}))
-                    }
-                }
-                if(item.start_time == "10:00:00"){
-                    if(item.end_time == "14:00:00"){
-                        setMonday((monday)=>({...monday,h_10_11:item,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setMonday((monday)=>({...monday,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-
-                        setMonday((monday)=>({...monday,h_10_11:item,h_11_12:item}))
-                    }
-                    else{
-                        setMonday((monday)=>({...monday,h_10_11:item}))
-                    }
-                }
-                if(item.start_time == "11:00:00"){
-                    if(item.end_time == "15:00:00"){
-                        setMonday((monday)=>({...monday,h_11_12:item,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setMonday((monday)=>({...monday,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setMonday((monday)=>({...monday,h_11_12:item,h_12_13:item}))
-                    }
-                    else{
-                        setMonday((monday)=>({...monday,h_11_12:item}))
-                    }
-                }
-                if(item.start_time == "12:00:00"){
-                    if(item.end_time == "16:00:00"){
-                        setMonday((monday)=>({...monday,h_12_13:item,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setMonday((monday)=>({...monday,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setMonday((monday)=>({...monday,h_12_13:item,h_13_14:item}))
-                    }
-                    else{
-                        setMonday((monday)=>({...monday,h_12_13:item}))
-                    }
-                }
-                if(item.start_time == "13:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setMonday((monday)=>({...monday,h_13_14:item,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setMonday((monday)=>({...monday,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setMonday((monday)=>({...monday,h_13_14:item,h_14_15:item}))
-                    }
-                    else{
-                        setMonday((monday)=>({...monday,h_13_14:item}))
-                    }
-                }
-                if(item.start_time == "14:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setMonday((monday)=>({...monday,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setMonday((monday)=>({...monday,h_14_15:item,h_15_16:item}))
-                    }
-                    else{
-                        setMonday((monday)=>({...monday,h_14_15:item}))
-                    }
-                }
-                if(item.start_time == "15:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setMonday((monday)=>({...monday,h_15_16:item,h_16_17:item}))
-                    }
-                    else{
-                        setMonday((monday)=>({...monday,h_15_16:item}))
-                    }
-                }
-                else if(item.start_time == "16:00:00"){
-                    setMonday((monday)=>({...monday,h_16_17:item}))
-                }
-            }
-
-            // tuesday
-            if(item.weekday == "Tuesday"){
-                if(item.start_time == "08:00:00"){
-                    if(item.end_time == "12:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_8_9:item,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_8_9:item,h_9_10:item,h_10_11:item}))
-                    }else
-                    if(item.end_time == "10:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_8_9:item,h_9_10:item}))
-                    }
-                    else{
-                        setTuesday((tuesday)=>({...tuesday,h_8_9:item}))
-                    }
-
-                }
-                if(item.start_time == "09:00:00"){
-                    if(item.end_time == "13:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_9_10:item,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_9_10:item,h_10_11:item}))
-                    }
-                    else{
-
-                        setTuesday((tuesday)=>({...tuesday,h_9_10:item}))
-                    }
-                }
-                if(item.start_time == "10:00:00"){
-                    if(item.end_time == "14:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_10_11:item,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-
-                        setTuesday((tuesday)=>({...tuesday,h_10_11:item,h_11_12:item}))
-                    }
-                    else{
-                        setTuesday((tuesday)=>({...tuesday,h_10_11:item}))
-                    }
-                }
-                if(item.start_time == "11:00:00"){
-                    if(item.end_time == "15:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_11_12:item,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_11_12:item,h_12_13:item}))
-                    }
-                    else{
-                        setTuesday((tuesday)=>({...tuesday,h_11_12:item}))
-                    }
-                }
-                if(item.start_time == "12:00:00"){
-                    if(item.end_time == "16:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_12_13:item,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_12_13:item,h_13_14:item}))
-                    }
-                    else{
-                        setTuesday((tuesday)=>({...tuesday,h_12_13:item}))
-                    }
-                }
-                if(item.start_time == "13:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_13_14:item,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_13_14:item,h_14_15:item}))
-                    }
-                    else{
-                        setTuesday((tuesday)=>({...tuesday,h_13_14:item}))
-                    }
-                }
-                if(item.start_time == "14:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_14_15:item,h_15_16:item}))
-                    }
-                    else{
-                        setTuesday((tuesday)=>({...tuesday,h_14_15:item}))
-                    }
-                }
-                if(item.start_time == "15:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_15_16:item,h_16_17:item}))
-                    }
-                    else{
-                        setTuesday((tuesday)=>({...tuesday,h_15_16:item}))
-                    }
-                }
-                else if(item.start_time == "16:00:00"){
-                    setTuesday((tuesday)=>({...tuesday,h_16_17:item}))
-                }
-            }
-
-            // wednesday
-            if(item.weekday == "Wednesday"){
-                if(item.start_time == "08:00:00"){
-                    if(item.end_time == "12:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_8_9:item,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_8_9:item,h_9_10:item,h_10_11:item}))
-                    }else
-                    if(item.end_time == "10:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_8_9:item,h_9_10:item}))
-                    }
-                    else{
-                        setWednesday((wednesday)=>({...wednesday,h_8_9:item}))
-                    }
-
-                }
-                if(item.start_time == "09:00:00"){
-                    if(item.end_time == "13:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_9_10:item,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_9_10:item,h_10_11:item}))
-                    }
-                    else{
-
-                        setWednesday((wednesday)=>({...wednesday,h_9_10:item}))
-                    }
-                }
-                if(item.start_time == "10:00:00"){
-                    if(item.end_time == "14:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_10_11:item,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-
-                        setWednesday((wednesday)=>({...wednesday,h_10_11:item,h_11_12:item}))
-                    }
-                    else{
-                        setWednesday((wednesday)=>({...wednesday,h_10_11:item}))
-                    }
-                }
-                if(item.start_time == "11:00:00"){
-                    if(item.end_time == "15:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_11_12:item,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_11_12:item,h_12_13:item}))
-                    }
-                    else{
-                        setWednesday((wednesday)=>({...wednesday,h_11_12:item}))
-                    }
-                }
-                if(item.start_time == "12:00:00"){
-                    if(item.end_time == "16:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_12_13:item,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_12_13:item,h_13_14:item}))
-                    }
-                    else{
-                        setWednesday((wednesday)=>({...wednesday,h_12_13:item}))
-                    }
-                }
-                if(item.start_time == "13:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_13_14:item,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_13_14:item,h_14_15:item}))
-                    }
-                    else{
-                        setWednesday((wednesday)=>({...wednesday,h_13_14:item}))
-                    }
-                }
-                if(item.start_time == "14:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_14_15:item,h_15_16:item}))
-                    }
-                    else{
-                        setWednesday((wednesday)=>({...wednesday,h_14_15:item}))
-                    }
-                }
-                if(item.start_time == "15:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_15_16:item,h_16_17:item}))
-                    }
-                    else{
-                        setWednesday((wednesday)=>({...wednesday,h_15_16:item}))
-                    }
-                }
-                else if(item.start_time == "16:00:00"){
-                    setWednesday((wednesday)=>({...wednesday,h_16_17:item}))
-                }
-            }
-            // thursday
-            if(item.weekday == "Thursday"){
-                if(item.start_time == "08:00:00"){
-                    if(item.end_time == "12:00:00"){
-                        setThursday((thursday)=>({...thursday,h_8_9:item,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setThursday((thursday)=>({...thursday,h_8_9:item,h_9_10:item,h_10_11:item}))
-                    }else
-                    if(item.end_time == "10:00:00"){
-                        setThursday((thursday)=>({...thursday,h_8_9:item,h_9_10:item}))
-                    }
-                    else{
-                        setThursday((thursday)=>({...thursday,h_8_9:item}))
-                    }
-
-                }
-                if(item.start_time == "09:00:00"){
-                    if(item.end_time == "13:00:00"){
-                        setThursday((thursday)=>({...thursday,h_9_10:item,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-                        setThursday((thursday)=>({...thursday,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setThursday((thursday)=>({...thursday,h_9_10:item,h_10_11:item}))
-                    }
-                    else{
-
-                        setThursday((thursday)=>({...thursday,h_9_10:item}))
-                    }
-                }
-                if(item.start_time == "10:00:00"){
-                    if(item.end_time == "14:00:00"){
-                        setThursday((thursday)=>({...thursday,h_10_11:item,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setThursday((thursday)=>({...thursday,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-
-                        setThursday((thursday)=>({...thursday,h_10_11:item,h_11_12:item}))
-                    }
-                    else{
-                        setThursday((thursday)=>({...thursday,h_10_11:item}))
-                    }
-                }
-                if(item.start_time == "11:00:00"){
-                    if(item.end_time == "15:00:00"){
-                        setThursday((thursday)=>({...thursday,h_11_12:item,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setThursday((thursday)=>({...thursday,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setThursday((thursday)=>({...thursday,h_11_12:item,h_12_13:item}))
-                    }
-                    else{
-                        setThursday((thursday)=>({...thursday,h_11_12:item}))
-                    }
-                }
-                if(item.start_time == "12:00:00"){
-                    if(item.end_time == "16:00:00"){
-                        setThursday((thursday)=>({...thursday,h_12_13:item,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setThursday((thursday)=>({...thursday,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setThursday((thursday)=>({...thursday,h_12_13:item,h_13_14:item}))
-                    }
-                    else{
-                        setThursday((thursday)=>({...thursday,h_12_13:item}))
-                    }
-                }
-                if(item.start_time == "13:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setThursday((thursday)=>({...thursday,h_13_14:item,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setThursday((thursday)=>({...thursday,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setThursday((thursday)=>({...thursday,h_13_14:item,h_14_15:item}))
-                    }
-                    else{
-                        setThursday((thursday)=>({...thursday,h_13_14:item}))
-                    }
-                }
-                if(item.start_time == "14:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setThursday((thursday)=>({...thursday,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setThursday((thursday)=>({...thursday,h_14_15:item,h_15_16:item}))
-                    }
-                    else{
-                        setThursday((thursday)=>({...thursday,h_14_15:item}))
-                    }
-                }
-                if(item.start_time == "15:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setThursday((thursday)=>({...thursday,h_15_16:item,h_16_17:item}))
-                    }
-                    else{
-                        setThursday((thursday)=>({...thursday,h_15_16:item}))
-                    }
-                }
-                else if(item.start_time == "16:00:00"){
-                    setThursday((thursday)=>({...thursday,h_16_17:item}))
-                }
-            }
-            // friday
-            if(item.weekday == "Friday"){
-                if(item.start_time == "08:00:00"){
-                    if(item.end_time == "12:00:00"){
-                        setFriday((friday)=>({...friday,h_8_9:item,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setFriday((friday)=>({...friday,h_8_9:item,h_9_10:item,h_10_11:item}))
-                    }else
-                    if(item.end_time == "10:00:00"){
-                        setFriday((friday)=>({...friday,h_8_9:item,h_9_10:item}))
-                    }
-                    else{
-                        setFriday((friday)=>({...friday,h_8_9:item}))
-                    }
-
-                }
-                if(item.start_time == "09:00:00"){
-                    if(item.end_time == "13:00:00"){
-                        setFriday((friday)=>({...friday,h_9_10:item,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-                        setFriday((friday)=>({...friday,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setFriday((friday)=>({...friday,h_9_10:item,h_10_11:item}))
-                    }
-                    else{
-
-                        setFriday((friday)=>({...friday,h_9_10:item}))
-                    }
-                }
-                if(item.start_time == "10:00:00"){
-                    if(item.end_time == "14:00:00"){
-                        setFriday((friday)=>({...friday,h_10_11:item,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setFriday((friday)=>({...friday,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-
-                        setFriday((friday)=>({...friday,h_10_11:item,h_11_12:item}))
-                    }
-                    else{
-                        setFriday((friday)=>({...friday,h_10_11:item}))
-                    }
-                }
-                if(item.start_time == "11:00:00"){
-                    if(item.end_time == "15:00:00"){
-                        setFriday((friday)=>({...friday,h_11_12:item,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setFriday((friday)=>({...friday,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setFriday((friday)=>({...friday,h_11_12:item,h_12_13:item}))
-                    }
-                    else{
-                        setFriday((friday)=>({...friday,h_11_12:item}))
-                    }
-                }
-                if(item.start_time == "12:00:00"){
-                    if(item.end_time == "16:00:00"){
-                        setFriday((friday)=>({...friday,h_12_13:item,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setFriday((friday)=>({...friday,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setFriday((friday)=>({...friday,h_12_13:item,h_13_14:item}))
-                    }
-                    else{
-                        setFriday((friday)=>({...friday,h_12_13:item}))
-                    }
-                }
-                if(item.start_time == "13:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setFriday((friday)=>({...friday,h_13_14:item,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setFriday((friday)=>({...friday,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setFriday((friday)=>({...friday,h_13_14:item,h_14_15:item}))
-                    }
-                    else{
-                        setFriday((friday)=>({...friday,h_13_14:item}))
-                    }
-                }
-                if(item.start_time == "14:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setFriday((friday)=>({...friday,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setFriday((friday)=>({...friday,h_14_15:item,h_15_16:item}))
-                    }
-                    else{
-                        setFriday((friday)=>({...friday,h_14_15:item}))
-                    }
-                }
-                if(item.start_time == "15:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setFriday((friday)=>({...friday,h_15_16:item,h_16_17:item}))
-                    }
-                    else{
-                        setFriday((friday)=>({...friday,h_15_16:item}))
-                    }
-                }
-                else if(item.start_time == "16:00:00"){
-                    setFriday((friday)=>({...friday,h_16_17:item}))
-                }
-            }
-
-            // saturday
-            if(item.weekday == "Saturday"){
-                if(item.start_time == "08:00:00"){
-                    if(item.end_time == "12:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_8_9:item,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_8_9:item,h_9_10:item,h_10_11:item}))
-                    }else
-                    if(item.end_time == "10:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_8_9:item,h_9_10:item}))
-                    }
-                    else{
-                        setSaturday((saturday)=>({...saturday,h_8_9:item}))
-                    }
-
-                }
-                if(item.start_time == "09:00:00"){
-                    if(item.end_time == "13:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_9_10:item,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_9_10:item,h_10_11:item}))
-                    }
-                    else{
-
-                        setSaturday((saturday)=>({...saturday,h_9_10:item}))
-                    }
-                }
-                if(item.start_time == "10:00:00"){
-                    if(item.end_time == "14:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_10_11:item,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-
-                        setSaturday((saturday)=>({...saturday,h_10_11:item,h_11_12:item}))
-                    }
-                    else{
-                        setSaturday((saturday)=>({...saturday,h_10_11:item}))
-                    }
-                }
-                if(item.start_time == "11:00:00"){
-                    if(item.end_time == "15:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_11_12:item,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_11_12:item,h_12_13:item}))
-                    }
-                    else{
-                        setSaturday((saturday)=>({...saturday,h_11_12:item}))
-                    }
-                }
-                if(item.start_time == "12:00:00"){
-                    if(item.end_time == "16:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_12_13:item,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_12_13:item,h_13_14:item}))
-                    }
-                    else{
-                        setSaturday((saturday)=>({...saturday,h_12_13:item}))
-                    }
-                }
-                if(item.start_time == "13:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_13_14:item,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_13_14:item,h_14_15:item}))
-                    }
-                    else{
-                        setSaturday((saturday)=>({...saturday,h_13_14:item}))
-                    }
-                }
-                if(item.start_time == "14:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_14_15:item,h_15_16:item}))
-                    }
-                    else{
-                        setSaturday((saturday)=>({...saturday,h_14_15:item}))
-                    }
-                }
-                if(item.start_time == "15:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_15_16:item,h_16_17:item}))
-                    }
-                    else{
-                        setSaturday((saturday)=>({...saturday,h_15_16:item}))
-                    }
-                }
-                else if(item.start_time == "16:00:00"){
-                    setSaturday((saturday)=>({...saturday,h_16_17:item}))
-                }
-            }
-
+             // monday
+             organise(item,"Monday",monday,setMonday)
+             // tuesday
+            organise(item,"Tuesday",tuesday,setTuesday)
+            //wednesday
+            organise(item,"Wednesday",wednesday,setWednesday)
+             //thursday
+             organise(item,"Thursday",thursday,setThursday)
+             // friday
+            organise(item,"Friday",friday,setFriday)
+             // saturday
+             organise(item,"Saturday",saturday,setSaturday)
         })
 
 
@@ -941,15 +390,15 @@ export default function ScheduleByClass() {
                     <table className="table table-bordered text-center">
                         <thead>
                             <tr className="bg-light-gray">
-                                <th>17 - 16</th>
-                                <th>16 - 15</th>
-                                <th>15 - 14</th>
-                                <th>14 - 13</th>
-                                <th>13 - 12</th>
-                                <th>12 - 11</th>
-                                <th>11 - 10</th>
-                                <th>10 - 9</th>
-                                <th>9 - 8</th>
+                              <th>16 - 17</th>
+                                <th>15 - 16</th>
+                                <th>14 - 15</th>
+                                <th>13 - 14</th>
+                                <th>12 - 13</th>
+                                <th>11 - 12</th>
+                                <th>10 - 11</th>
+                                <th>9 - 10</th>
+                                <th>8 - 9</th>
                                 <th />
                             </tr>
                         </thead>
@@ -1051,15 +500,15 @@ export default function ScheduleByClass() {
                     <table className="table table-bordered text-center">
                         <thead>
                             <tr className="bg-light-gray">
-                                <th>17 - 16</th>
-                                <th>16 - 15</th>
-                                <th>15 - 14</th>
-                                <th>14 - 13</th>
-                                <th>13 - 12</th>
-                                <th>12 - 11</th>
-                                <th>11 - 10</th>
-                                <th>10 - 9</th>
-                                <th>9 - 8</th>
+                                <th>16 - 17</th>
+                                <th>15 - 16</th>
+                                <th>14 - 15</th>
+                                <th>13 - 14</th>
+                                <th>12 - 13</th>
+                                <th>11 - 12</th>
+                                <th>10 - 11</th>
+                                <th>9 - 10</th>
+                                <th>8 - 9</th>
                                 <th />
                             </tr>
                         </thead>
@@ -1086,7 +535,7 @@ export default function ScheduleByClass() {
                                     <TdToPrint item={tuesday.h_10_11}/>
                                     <TdToPrint item={tuesday.h_9_10}/>
                                     <TdToPrint item={tuesday.h_8_9}/>
-                                <th className="align-middle">الثلثاء</th>
+                                <th className="align-middle">الثلاثاء</th>
                             </tr>
                             <tr>
                                     <TdToPrint item={wednesday.h_16_17}/>

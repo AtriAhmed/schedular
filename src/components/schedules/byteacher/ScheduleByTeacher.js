@@ -14,8 +14,166 @@ import TdToPrint from './TdToPrintByTeacher'
 import '../ToPrint.css'
 
 export default function ScheduleByTeacher() {
+    function organise(item,day,data,setdata){
+        if(item.weekday == day){
+          if(item.start_time == "07:00:00"){
+              if(item.end_time == "11:00:00"){
+                setdata((data)=>({...data,h_7_8:item,h_8_9:item,h_9_10:item,h_10_11:item}))
+              }else
+              if(item.end_time == "10:00:00"){
+                  setdata((data)=>({...data,h_7_8:item,h_8_9:item,h_9_10:item}))
+              }else
+              if(item.end_time == "09:00:00"){
+                setdata((data)=>({...data,h_7_8:item,h_8_9:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_7_8:item}))
+              }
+          }
+          else
+          if(item.start_time == "08:00:00"){
+              if(item.end_time == "12:00:00"){
+                setdata((data)=>({...data,h_8_9:item,h_9_10:item,h_10_11:item,h_11_12:item}))
+              }else
+              if(item.end_time == "11:00:00"){
+                setdata((data)=>({...data,h_8_9:item,h_9_10:item,h_10_11:item}))
+              }else
+              if(item.end_time == "10:00:00"){
+                setdata((data)=>({...data,h_8_9:item,h_9_10:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_8_9:item}))
+              }
+    
+          }
+          else
+          if(item.start_time == "09:00:00"){
+              if(item.end_time == "13:00:00"){
+                setdata((data)=>({...data,h_9_10:item,h_10_11:item,h_11_12:item,h_12_13:item}))
+              }else
+              if(item.end_time == "12:00:00"){
+                setdata((data)=>({...data,h_9_10:item,h_10_11:item,h_11_12:item}))
+              }else
+              if(item.end_time == "11:00:00"){
+                setdata((data)=>({...data,h_9_10:item,h_10_11:item}))
+              }
+              else{
+    
+                setdata((data)=>({...data,h_9_10:item}))
+              }
+          }else
+          if(item.start_time == "10:00:00"){
+              if(item.end_time == "14:00:00"){
+                setdata((data)=>({...data,h_10_11:item,h_11_12:item,h_12_13:item,h_13_14:item}))
+              }else
+              if(item.end_time == "13:00:00"){
+                setdata((data)=>({...data,h_10_11:item,h_11_12:item,h_12_13:item}))
+              }else
+              if(item.end_time == "12:00:00"){
+    
+                setdata((data)=>({...data,h_10_11:item,h_11_12:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_10_11:item}))
+              }
+          }else
+          if(item.start_time == "11:00:00"){
+              if(item.end_time == "15:00:00"){
+                setdata((data)=>({...data,h_11_12:item,h_12_13:item,h_13_14:item,h_14_15:item}))
+              }else
+              if(item.end_time == "14:00:00"){
+                setdata((data)=>({...data,h_11_12:item,h_12_13:item,h_13_14:item}))
+              }else
+              if(item.end_time == "13:00:00"){
+                setdata((data)=>({...data,h_11_12:item,h_12_13:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_11_12:item}))
+              }
+          }else
+          if(item.start_time == "12:00:00"){
+              if(item.end_time == "16:00:00"){
+                setdata((data)=>({...data,h_12_13:item,h_13_14:item,h_14_15:item,h_15_16:item}))
+              }else
+              if(item.end_time == "15:00:00"){
+                setdata((data)=>({...data,h_12_13:item,h_13_14:item,h_14_15:item}))
+              }else
+              if(item.end_time == "14:00:00"){
+                setdata((data)=>({...data,h_12_13:item,h_13_14:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_12_13:item}))
+              }
+          }else
+          if(item.start_time == "13:00:00"){
+              if(item.end_time == "17:00:00"){
+                setdata((data)=>({...data,h_13_14:item,h_14_15:item,h_15_16:item,h_16_17:item}))
+              }else
+              if(item.end_time == "16:00:00"){
+                setdata((data)=>({...data,h_13_14:item,h_14_15:item,h_15_16:item}))
+              }else
+              if(item.end_time == "15:00:00"){
+                setdata((data)=>({...data,h_13_14:item,h_14_15:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_13_14:item}))
+              }
+          }else
+          if(item.start_time == "14:00:00"){
+              if(item.end_time == "18:00:00"){
+                setdata((data)=>({...data,h_14_15:item,h_15_16:item,h_16_17:item,h_17_18:item}))
+              }
+              if(item.end_time == "17:00:00"){
+                setdata((data)=>({...data,h_14_15:item,h_15_16:item,h_16_17:item}))
+              }else
+              if(item.end_time == "16:00:00"){
+                setdata((data)=>({...data,h_14_15:item,h_15_16:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_14_15:item}))
+              }
+          }else
+          if(item.start_time == "15:00:00"){
+              if(item.end_time == "19:00:00"){
+                setdata((data)=>({...data,h_15_16:item,h_16_17:item,h_17_18:item,h_18_19:item}))
+              }
+              if(item.end_time == "18:00:00"){
+                setdata((data)=>({...data,h_15_16:item,h_16_17:item,h_17_18:item}))
+              }
+              if(item.end_time == "17:00:00"){
+                setdata((data)=>({...data,h_15_16:item,h_16_17:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_15_16:item}))
+              }
+          }
+          else if(item.start_time == "16:00:00"){
+              if(item.end_time == "19:00:00"){
+                setdata((data)=>({...data,h_16_17:item,h_17_18:item,h_18_19:item}))
+              }
+              if(item.end_time == "18:00:00"){
+                setdata((data)=>({...data,h_16_17:item,h_17_18:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_16_17:item}))
+              }
+          }
+          else if(item.start_time == "17:00:00"){
+              if(item.end_time == "19:00:00"){
+                setdata((data)=>({...data,h_17_18:item,h_18_19:item}))
+              }
+              else{
+                setdata((data)=>({...data,h_17_18:item}))
+              }
+          }
+          else if(item.start_time == "18:00:00"){
+            setdata((data)=>({...data,h_18_19:item}))
+          }
+      }
+      }
   const componentRef = useRef();
     const [monday, setMonday] = useState({
+        h_7_8:{},
         h_8_9:{},
         h_9_10:{},
         h_10_11:{},
@@ -25,9 +183,12 @@ export default function ScheduleByTeacher() {
         h_14_15:{},
         h_15_16:{},
         h_16_17:{},
+        h_17_18:{},
+        h_18_19:{},
     });
 
     const [tuesday, setTuesday] = useState({
+        h_7_8:{},
         h_8_9:{},
         h_9_10:{},
         h_10_11:{},
@@ -37,9 +198,12 @@ export default function ScheduleByTeacher() {
         h_14_15:{},
         h_15_16:{},
         h_16_17:{},
+        h_17_18:{},
+        h_18_19:{},
     });
 
     const [wednesday, setWednesday] = useState({
+        h_7_8:{},
         h_8_9:{},
         h_9_10:{},
         h_10_11:{},
@@ -49,9 +213,12 @@ export default function ScheduleByTeacher() {
         h_14_15:{},
         h_15_16:{},
         h_16_17:{},
+        h_17_18:{},
+        h_18_19:{},
     });
 
     const [thursday, setThursday] = useState({
+        h_7_8:{},
         h_8_9:{},
         h_9_10:{},
         h_10_11:{},
@@ -61,9 +228,12 @@ export default function ScheduleByTeacher() {
         h_14_15:{},
         h_15_16:{},
         h_16_17:{},
+        h_17_18:{},
+        h_18_19:{},
     });
 
     const [friday, setFriday] = useState({
+        h_7_8:{},
         h_8_9:{},
         h_9_10:{},
         h_10_11:{},
@@ -73,9 +243,12 @@ export default function ScheduleByTeacher() {
         h_14_15:{},
         h_15_16:{},
         h_16_17:{},
+        h_17_18:{},
+        h_18_19:{},
     });
 
     const [saturday, setSaturday] = useState({
+        h_7_8:{},
         h_8_9:{},
         h_9_10:{},
         h_10_11:{},
@@ -85,11 +258,10 @@ export default function ScheduleByTeacher() {
         h_14_15:{},
         h_15_16:{},
         h_16_17:{},
+        h_17_18:{},
+        h_18_19:{},
     });
 
-    function refreshItems(){
-        /* axios.get(`/api/sessions-by-teacher/${id}`).then(res=>{if(res.data.status === 200){setItemsList(res.data.items);}}); */
-      }
       const [toAdd,setToAdd] = useState({})
       const [toEdit,setToEdit] = useState({})
       const [modalShow, setModalShow] = useState(false);
@@ -141,7 +313,8 @@ export default function ScheduleByTeacher() {
       }, [sessions])
 
       useEffect(() => {
-        setMonday({h_8_9:{},
+        setMonday({h_7_8:{},
+            h_8_9:{},
             h_9_10:{},
             h_10_11:{},
             h_11_12:{},
@@ -149,8 +322,11 @@ export default function ScheduleByTeacher() {
             h_13_14:{},
             h_14_15:{},
             h_15_16:{},
-            h_16_17:{},})
-            setTuesday({h_8_9:{},
+            h_16_17:{},
+            h_17_18:{},
+            h_18_19:{},})
+            setTuesday({h_7_8:{},
+                h_8_9:{},
                 h_9_10:{},
                 h_10_11:{},
                 h_11_12:{},
@@ -158,8 +334,11 @@ export default function ScheduleByTeacher() {
                 h_13_14:{},
                 h_14_15:{},
                 h_15_16:{},
-                h_16_17:{},})
-                setWednesday({h_8_9:{},
+                h_16_17:{},
+                h_17_18:{},
+                h_18_19:{},})
+                setWednesday({h_7_8:{},
+                    h_8_9:{},
                     h_9_10:{},
                     h_10_11:{},
                     h_11_12:{},
@@ -167,8 +346,11 @@ export default function ScheduleByTeacher() {
                     h_13_14:{},
                     h_14_15:{},
                     h_15_16:{},
-                    h_16_17:{},})
-                    setThursday({h_8_9:{},
+                    h_16_17:{},
+                    h_17_18:{},
+                    h_18_19:{},})
+                    setThursday({h_7_8:{},
+                        h_8_9:{},
                         h_9_10:{},
                         h_10_11:{},
                         h_11_12:{},
@@ -176,8 +358,11 @@ export default function ScheduleByTeacher() {
                         h_13_14:{},
                         h_14_15:{},
                         h_15_16:{},
-                        h_16_17:{},})
-                        setFriday({h_8_9:{},
+                        h_16_17:{},
+                        h_17_18:{},
+                        h_18_19:{},})
+                        setFriday({h_7_8:{},
+                            h_8_9:{},
                             h_9_10:{},
                             h_10_11:{},
                             h_11_12:{},
@@ -185,8 +370,11 @@ export default function ScheduleByTeacher() {
                             h_13_14:{},
                             h_14_15:{},
                             h_15_16:{},
-                            h_16_17:{},})
-                            setSaturday({h_8_9:{},
+                            h_16_17:{},
+                            h_17_18:{},
+                            h_18_19:{},})
+                            setSaturday({h_7_8:{},
+                                h_8_9:{},
                                 h_9_10:{},
                                 h_10_11:{},
                                 h_11_12:{},
@@ -194,686 +382,23 @@ export default function ScheduleByTeacher() {
                                 h_13_14:{},
                                 h_14_15:{},
                                 h_15_16:{},
-                                h_16_17:{},})
+                                h_16_17:{},
+                                h_17_18:{},
+                                h_18_19:{},})
         itemsList.map((item)=>{
-            // monday
-            if(item.weekday == "Monday"){
-                if(item.start_time == "08:00:00"){
-                    if(item.end_time == "12:00:00"){
-                        setMonday((monday)=>({...monday,h_8_9:item,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setMonday((monday)=>({...monday,h_8_9:item,h_9_10:item,h_10_11:item}))
-                    }else
-                    if(item.end_time == "10:00:00"){
-                        setMonday((monday)=>({...monday,h_8_9:item,h_9_10:item}))
-                    }
-                    else{
-                        setMonday((monday)=>({...monday,h_8_9:item}))
-                    }
-
-                }
-                if(item.start_time == "09:00:00"){
-                    if(item.end_time == "13:00:00"){
-                        setMonday((monday)=>({...monday,h_9_10:item,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-                        setMonday((monday)=>({...monday,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setMonday((monday)=>({...monday,h_9_10:item,h_10_11:item}))
-                    }
-                    else{
-
-                        setMonday((monday)=>({...monday,h_9_10:item}))
-                    }
-                }
-                if(item.start_time == "10:00:00"){
-                    if(item.end_time == "14:00:00"){
-                        setMonday((monday)=>({...monday,h_10_11:item,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setMonday((monday)=>({...monday,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-
-                        setMonday((monday)=>({...monday,h_10_11:item,h_11_12:item}))
-                    }
-                    else{
-                        setMonday((monday)=>({...monday,h_10_11:item}))
-                    }
-                }
-                if(item.start_time == "11:00:00"){
-                    if(item.end_time == "15:00:00"){
-                        setMonday((monday)=>({...monday,h_11_12:item,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setMonday((monday)=>({...monday,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setMonday((monday)=>({...monday,h_11_12:item,h_12_13:item}))
-                    }
-                    else{
-                        setMonday((monday)=>({...monday,h_11_12:item}))
-                    }
-                }
-                if(item.start_time == "12:00:00"){
-                    if(item.end_time == "16:00:00"){
-                        setMonday((monday)=>({...monday,h_12_13:item,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setMonday((monday)=>({...monday,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setMonday((monday)=>({...monday,h_12_13:item,h_13_14:item}))
-                    }
-                    else{
-                        setMonday((monday)=>({...monday,h_12_13:item}))
-                    }
-                }
-                if(item.start_time == "13:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setMonday((monday)=>({...monday,h_13_14:item,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setMonday((monday)=>({...monday,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setMonday((monday)=>({...monday,h_13_14:item,h_14_15:item}))
-                    }
-                    else{
-                        setMonday((monday)=>({...monday,h_13_14:item}))
-                    }
-                }
-                if(item.start_time == "14:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setMonday((monday)=>({...monday,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setMonday((monday)=>({...monday,h_14_15:item,h_15_16:item}))
-                    }
-                    else{
-                        setMonday((monday)=>({...monday,h_14_15:item}))
-                    }
-                }
-                if(item.start_time == "15:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setMonday((monday)=>({...monday,h_15_16:item,h_16_17:item}))
-                    }
-                    else{
-                        setMonday((monday)=>({...monday,h_15_16:item}))
-                    }
-                }
-                else if(item.start_time == "16:00:00"){
-                    setMonday((monday)=>({...monday,h_16_17:item}))
-                }
-            }
-
-            // tuesday
-            if(item.weekday == "Tuesday"){
-                if(item.start_time == "08:00:00"){
-                    if(item.end_time == "12:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_8_9:item,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_8_9:item,h_9_10:item,h_10_11:item}))
-                    }else
-                    if(item.end_time == "10:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_8_9:item,h_9_10:item}))
-                    }
-                    else{
-                        setTuesday((tuesday)=>({...tuesday,h_8_9:item}))
-                    }
-
-                }
-                if(item.start_time == "09:00:00"){
-                    if(item.end_time == "13:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_9_10:item,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_9_10:item,h_10_11:item}))
-                    }
-                    else{
-
-                        setTuesday((tuesday)=>({...tuesday,h_9_10:item}))
-                    }
-                }
-                if(item.start_time == "10:00:00"){
-                    if(item.end_time == "14:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_10_11:item,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-
-                        setTuesday((tuesday)=>({...tuesday,h_10_11:item,h_11_12:item}))
-                    }
-                    else{
-                        setTuesday((tuesday)=>({...tuesday,h_10_11:item}))
-                    }
-                }
-                if(item.start_time == "11:00:00"){
-                    if(item.end_time == "15:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_11_12:item,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_11_12:item,h_12_13:item}))
-                    }
-                    else{
-                        setTuesday((tuesday)=>({...tuesday,h_11_12:item}))
-                    }
-                }
-                if(item.start_time == "12:00:00"){
-                    if(item.end_time == "16:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_12_13:item,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_12_13:item,h_13_14:item}))
-                    }
-                    else{
-                        setTuesday((tuesday)=>({...tuesday,h_12_13:item}))
-                    }
-                }
-                if(item.start_time == "13:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_13_14:item,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_13_14:item,h_14_15:item}))
-                    }
-                    else{
-                        setTuesday((tuesday)=>({...tuesday,h_13_14:item}))
-                    }
-                }
-                if(item.start_time == "14:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_14_15:item,h_15_16:item}))
-                    }
-                    else{
-                        setTuesday((tuesday)=>({...tuesday,h_14_15:item}))
-                    }
-                }
-                if(item.start_time == "15:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setTuesday((tuesday)=>({...tuesday,h_15_16:item,h_16_17:item}))
-                    }
-                    else{
-                        setTuesday((tuesday)=>({...tuesday,h_15_16:item}))
-                    }
-                }
-                else if(item.start_time == "16:00:00"){
-                    setTuesday((tuesday)=>({...tuesday,h_16_17:item}))
-                }
-            }
-
-            // wednesday
-            if(item.weekday == "Wednesday"){
-                if(item.start_time == "08:00:00"){
-                    if(item.end_time == "12:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_8_9:item,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_8_9:item,h_9_10:item,h_10_11:item}))
-                    }else
-                    if(item.end_time == "10:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_8_9:item,h_9_10:item}))
-                    }
-                    else{
-                        setWednesday((wednesday)=>({...wednesday,h_8_9:item}))
-                    }
-
-                }
-                if(item.start_time == "09:00:00"){
-                    if(item.end_time == "13:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_9_10:item,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_9_10:item,h_10_11:item}))
-                    }
-                    else{
-
-                        setWednesday((wednesday)=>({...wednesday,h_9_10:item}))
-                    }
-                }
-                if(item.start_time == "10:00:00"){
-                    if(item.end_time == "14:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_10_11:item,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-
-                        setWednesday((wednesday)=>({...wednesday,h_10_11:item,h_11_12:item}))
-                    }
-                    else{
-                        setWednesday((wednesday)=>({...wednesday,h_10_11:item}))
-                    }
-                }
-                if(item.start_time == "11:00:00"){
-                    if(item.end_time == "15:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_11_12:item,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_11_12:item,h_12_13:item}))
-                    }
-                    else{
-                        setWednesday((wednesday)=>({...wednesday,h_11_12:item}))
-                    }
-                }
-                if(item.start_time == "12:00:00"){
-                    if(item.end_time == "16:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_12_13:item,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_12_13:item,h_13_14:item}))
-                    }
-                    else{
-                        setWednesday((wednesday)=>({...wednesday,h_12_13:item}))
-                    }
-                }
-                if(item.start_time == "13:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_13_14:item,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_13_14:item,h_14_15:item}))
-                    }
-                    else{
-                        setWednesday((wednesday)=>({...wednesday,h_13_14:item}))
-                    }
-                }
-                if(item.start_time == "14:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_14_15:item,h_15_16:item}))
-                    }
-                    else{
-                        setWednesday((wednesday)=>({...wednesday,h_14_15:item}))
-                    }
-                }
-                if(item.start_time == "15:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setWednesday((wednesday)=>({...wednesday,h_15_16:item,h_16_17:item}))
-                    }
-                    else{
-                        setWednesday((wednesday)=>({...wednesday,h_15_16:item}))
-                    }
-                }
-                else if(item.start_time == "16:00:00"){
-                    setWednesday((wednesday)=>({...wednesday,h_16_17:item}))
-                }
-            }
-            // thursday
-            if(item.weekday == "Thursday"){
-                if(item.start_time == "08:00:00"){
-                    if(item.end_time == "12:00:00"){
-                        setThursday((thursday)=>({...thursday,h_8_9:item,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setThursday((thursday)=>({...thursday,h_8_9:item,h_9_10:item,h_10_11:item}))
-                    }else
-                    if(item.end_time == "10:00:00"){
-                        setThursday((thursday)=>({...thursday,h_8_9:item,h_9_10:item}))
-                    }
-                    else{
-                        setThursday((thursday)=>({...thursday,h_8_9:item}))
-                    }
-
-                }
-                if(item.start_time == "09:00:00"){
-                    if(item.end_time == "13:00:00"){
-                        setThursday((thursday)=>({...thursday,h_9_10:item,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-                        setThursday((thursday)=>({...thursday,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setThursday((thursday)=>({...thursday,h_9_10:item,h_10_11:item}))
-                    }
-                    else{
-
-                        setThursday((thursday)=>({...thursday,h_9_10:item}))
-                    }
-                }
-                if(item.start_time == "10:00:00"){
-                    if(item.end_time == "14:00:00"){
-                        setThursday((thursday)=>({...thursday,h_10_11:item,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setThursday((thursday)=>({...thursday,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-
-                        setThursday((thursday)=>({...thursday,h_10_11:item,h_11_12:item}))
-                    }
-                    else{
-                        setThursday((thursday)=>({...thursday,h_10_11:item}))
-                    }
-                }
-                if(item.start_time == "11:00:00"){
-                    if(item.end_time == "15:00:00"){
-                        setThursday((thursday)=>({...thursday,h_11_12:item,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setThursday((thursday)=>({...thursday,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setThursday((thursday)=>({...thursday,h_11_12:item,h_12_13:item}))
-                    }
-                    else{
-                        setThursday((thursday)=>({...thursday,h_11_12:item}))
-                    }
-                }
-                if(item.start_time == "12:00:00"){
-                    if(item.end_time == "16:00:00"){
-                        setThursday((thursday)=>({...thursday,h_12_13:item,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setThursday((thursday)=>({...thursday,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setThursday((thursday)=>({...thursday,h_12_13:item,h_13_14:item}))
-                    }
-                    else{
-                        setThursday((thursday)=>({...thursday,h_12_13:item}))
-                    }
-                }
-                if(item.start_time == "13:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setThursday((thursday)=>({...thursday,h_13_14:item,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setThursday((thursday)=>({...thursday,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setThursday((thursday)=>({...thursday,h_13_14:item,h_14_15:item}))
-                    }
-                    else{
-                        setThursday((thursday)=>({...thursday,h_13_14:item}))
-                    }
-                }
-                if(item.start_time == "14:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setThursday((thursday)=>({...thursday,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setThursday((thursday)=>({...thursday,h_14_15:item,h_15_16:item}))
-                    }
-                    else{
-                        setThursday((thursday)=>({...thursday,h_14_15:item}))
-                    }
-                }
-                if(item.start_time == "15:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setThursday((thursday)=>({...thursday,h_15_16:item,h_16_17:item}))
-                    }
-                    else{
-                        setThursday((thursday)=>({...thursday,h_15_16:item}))
-                    }
-                }
-                else if(item.start_time == "16:00:00"){
-                    setThursday((thursday)=>({...thursday,h_16_17:item}))
-                }
-            }
-            // friday
-            if(item.weekday == "Friday"){
-                if(item.start_time == "08:00:00"){
-                    if(item.end_time == "12:00:00"){
-                        setFriday((friday)=>({...friday,h_8_9:item,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setFriday((friday)=>({...friday,h_8_9:item,h_9_10:item,h_10_11:item}))
-                    }else
-                    if(item.end_time == "10:00:00"){
-                        setFriday((friday)=>({...friday,h_8_9:item,h_9_10:item}))
-                    }
-                    else{
-                        setFriday((friday)=>({...friday,h_8_9:item}))
-                    }
-
-                }
-                if(item.start_time == "09:00:00"){
-                    if(item.end_time == "13:00:00"){
-                        setFriday((friday)=>({...friday,h_9_10:item,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-                        setFriday((friday)=>({...friday,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setFriday((friday)=>({...friday,h_9_10:item,h_10_11:item}))
-                    }
-                    else{
-
-                        setFriday((friday)=>({...friday,h_9_10:item}))
-                    }
-                }
-                if(item.start_time == "10:00:00"){
-                    if(item.end_time == "14:00:00"){
-                        setFriday((friday)=>({...friday,h_10_11:item,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setFriday((friday)=>({...friday,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-
-                        setFriday((friday)=>({...friday,h_10_11:item,h_11_12:item}))
-                    }
-                    else{
-                        setFriday((friday)=>({...friday,h_10_11:item}))
-                    }
-                }
-                if(item.start_time == "11:00:00"){
-                    if(item.end_time == "15:00:00"){
-                        setFriday((friday)=>({...friday,h_11_12:item,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setFriday((friday)=>({...friday,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setFriday((friday)=>({...friday,h_11_12:item,h_12_13:item}))
-                    }
-                    else{
-                        setFriday((friday)=>({...friday,h_11_12:item}))
-                    }
-                }
-                if(item.start_time == "12:00:00"){
-                    if(item.end_time == "16:00:00"){
-                        setFriday((friday)=>({...friday,h_12_13:item,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setFriday((friday)=>({...friday,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setFriday((friday)=>({...friday,h_12_13:item,h_13_14:item}))
-                    }
-                    else{
-                        setFriday((friday)=>({...friday,h_12_13:item}))
-                    }
-                }
-                if(item.start_time == "13:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setFriday((friday)=>({...friday,h_13_14:item,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setFriday((friday)=>({...friday,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setFriday((friday)=>({...friday,h_13_14:item,h_14_15:item}))
-                    }
-                    else{
-                        setFriday((friday)=>({...friday,h_13_14:item}))
-                    }
-                }
-                if(item.start_time == "14:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setFriday((friday)=>({...friday,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setFriday((friday)=>({...friday,h_14_15:item,h_15_16:item}))
-                    }
-                    else{
-                        setFriday((friday)=>({...friday,h_14_15:item}))
-                    }
-                }
-                if(item.start_time == "15:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setFriday((friday)=>({...friday,h_15_16:item,h_16_17:item}))
-                    }
-                    else{
-                        setFriday((friday)=>({...friday,h_15_16:item}))
-                    }
-                }
-                else if(item.start_time == "16:00:00"){
-                    setFriday((friday)=>({...friday,h_16_17:item}))
-                }
-            }
-
-            // saturday
-            if(item.weekday == "Saturday"){
-                if(item.start_time == "08:00:00"){
-                    if(item.end_time == "12:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_8_9:item,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_8_9:item,h_9_10:item,h_10_11:item}))
-                    }else
-                    if(item.end_time == "10:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_8_9:item,h_9_10:item}))
-                    }
-                    else{
-                        setSaturday((saturday)=>({...saturday,h_8_9:item}))
-                    }
-
-                }
-                if(item.start_time == "09:00:00"){
-                    if(item.end_time == "13:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_9_10:item,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_9_10:item,h_10_11:item,h_11_12:item}))
-                    }else
-                    if(item.end_time == "11:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_9_10:item,h_10_11:item}))
-                    }
-                    else{
-
-                        setSaturday((saturday)=>({...saturday,h_9_10:item}))
-                    }
-                }
-                if(item.start_time == "10:00:00"){
-                    if(item.end_time == "14:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_10_11:item,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_10_11:item,h_11_12:item,h_12_13:item}))
-                    }else
-                    if(item.end_time == "12:00:00"){
-
-                        setSaturday((saturday)=>({...saturday,h_10_11:item,h_11_12:item}))
-                    }
-                    else{
-                        setSaturday((saturday)=>({...saturday,h_10_11:item}))
-                    }
-                }
-                if(item.start_time == "11:00:00"){
-                    if(item.end_time == "15:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_11_12:item,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_11_12:item,h_12_13:item,h_13_14:item}))
-                    }else
-                    if(item.end_time == "13:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_11_12:item,h_12_13:item}))
-                    }
-                    else{
-                        setSaturday((saturday)=>({...saturday,h_11_12:item}))
-                    }
-                }
-                if(item.start_time == "12:00:00"){
-                    if(item.end_time == "16:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_12_13:item,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_12_13:item,h_13_14:item,h_14_15:item}))
-                    }else
-                    if(item.end_time == "14:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_12_13:item,h_13_14:item}))
-                    }
-                    else{
-                        setSaturday((saturday)=>({...saturday,h_12_13:item}))
-                    }
-                }
-                if(item.start_time == "13:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_13_14:item,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_13_14:item,h_14_15:item,h_15_16:item}))
-                    }else
-                    if(item.end_time == "15:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_13_14:item,h_14_15:item}))
-                    }
-                    else{
-                        setSaturday((saturday)=>({...saturday,h_13_14:item}))
-                    }
-                }
-                if(item.start_time == "14:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_14_15:item,h_15_16:item,h_16_17:item}))
-                    }else
-                    if(item.end_time == "16:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_14_15:item,h_15_16:item}))
-                    }
-                    else{
-                        setSaturday((saturday)=>({...saturday,h_14_15:item}))
-                    }
-                }
-                if(item.start_time == "15:00:00"){
-                    if(item.end_time == "17:00:00"){
-                        setSaturday((saturday)=>({...saturday,h_15_16:item,h_16_17:item}))
-                    }
-                    else{
-                        setSaturday((saturday)=>({...saturday,h_15_16:item}))
-                    }
-                }
-                else if(item.start_time == "16:00:00"){
-                    setSaturday((saturday)=>({...saturday,h_16_17:item}))
-                }
-            }
-
+             // monday
+             organise(item,"Monday",monday,setMonday)
+             // tuesday
+            organise(item,"Tuesday",tuesday,setTuesday)
+            //wednesday
+            organise(item,"Wednesday",wednesday,setWednesday)
+             //thursday
+             organise(item,"Thursday",thursday,setThursday)
+             // friday
+            organise(item,"Friday",friday,setFriday)
+             // saturday
+             organise(item,"Saturday",saturday,setSaturday)
         })
-
 
       }, [itemsList])
 
@@ -889,6 +414,8 @@ export default function ScheduleByTeacher() {
                     <table className="table table-bordered text-center">
                         <thead>
                             <tr className="bg-light-gray">
+                                <th>18 - 19</th>
+                                <th>17 - 18</th>
                                 <th>16 - 17</th>
                                 <th>15 - 16</th>
                                 <th>14 - 15</th>
@@ -898,11 +425,14 @@ export default function ScheduleByTeacher() {
                                 <th>10 - 11</th>
                                 <th>9 - 10</th>
                                 <th>8 - 9</th>
+                                <th>7 - 8</th>
                                 <th />
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Monday",start_time:"18:00:00"}} item={monday.h_18_19}/>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Monday",start_time:"17:00:00"}} item={monday.h_17_18}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Monday",start_time:"16:00:00"}} item={monday.h_16_17}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Monday",start_time:"15:00:00"}} item={monday.h_15_16}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Monday",start_time:"14:00:00"}} item={monday.h_14_15}/>
@@ -912,9 +442,12 @@ export default function ScheduleByTeacher() {
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Monday",start_time:"10:00:00"}} item={monday.h_10_11}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Monday",start_time:"09:00:00"}} item={monday.h_9_10}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Monday",start_time:"08:00:00"}} item={monday.h_8_9}/>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Monday",start_time:"07:00:00"}} item={monday.h_7_8}/>
                              <th className="align-middle">الإثنين</th>
                             </tr>
                             <tr>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Tuesday",start_time:"18:00:00"}} item={tuesday.h_18_19}/>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Tuesday",start_time:"17:00:00"}} item={tuesday.h_17_18}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Tuesday",start_time:"16:00:00"}} item={tuesday.h_16_17}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Tuesday",start_time:"15:00:00"}} item={tuesday.h_15_16}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Tuesday",start_time:"14:00:00"}} item={tuesday.h_14_15}/>
@@ -924,9 +457,12 @@ export default function ScheduleByTeacher() {
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Tuesday",start_time:"10:00:00"}} item={tuesday.h_10_11}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Tuesday",start_time:"09:00:00"}} item={tuesday.h_9_10}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Tuesday",start_time:"08:00:00"}} item={tuesday.h_8_9}/>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Tuesday",start_time:"07:00:00"}} item={tuesday.h_7_8}/>
                                 <th className="align-middle">الثلاثاء</th>
                             </tr>
                             <tr>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Wednesday",start_time:"18:00:00"}} item={wednesday.h_18_19}/>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Wednesday",start_time:"17:00:00"}} item={wednesday.h_17_18}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Wednesday",start_time:"16:00:00"}} item={wednesday.h_16_17}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Wednesday",start_time:"15:00:00"}} item={wednesday.h_15_16}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Wednesday",start_time:"14:00:00"}} item={wednesday.h_14_15}/>
@@ -936,9 +472,12 @@ export default function ScheduleByTeacher() {
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Wednesday",start_time:"10:00:00"}} item={wednesday.h_10_11}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Wednesday",start_time:"09:00:00"}} item={wednesday.h_9_10}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Wednesday",start_time:"08:00:00"}} item={wednesday.h_8_9}/>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Wednesday",start_time:"07:00:00"}} item={wednesday.h_7_8}/>
                                 <th className="align-middle">الإربعاء</th>
                             </tr>
                             <tr>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Thursday",start_time:"18:00:00"}} item={thursday.h_18_19}/>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Thursday",start_time:"17:00:00"}} item={thursday.h_17_18}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Thursday",start_time:"16:00:00"}} item={thursday.h_16_17}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Thursday",start_time:"15:00:00"}} item={thursday.h_15_16}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Thursday",start_time:"14:00:00"}} item={thursday.h_14_15}/>
@@ -948,9 +487,12 @@ export default function ScheduleByTeacher() {
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Thursday",start_time:"10:00:00"}} item={thursday.h_10_11}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Thursday",start_time:"09:00:00"}} item={thursday.h_9_10}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Thursday",start_time:"08:00:00"}} item={thursday.h_8_9}/>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Thursday",start_time:"07:00:00"}} item={thursday.h_7_8}/>
                                 <th className="align-middle">الخميس</th>
                             </tr>
                             <tr>
+                            <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Friday",start_time:"18:00:00"}} item={friday.h_18_19}/>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Friday",start_time:"17:00:00"}} item={friday.h_17_18}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Friday",start_time:"16:00:00"}} item={friday.h_16_17}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Friday",start_time:"15:00:00"}} item={friday.h_15_16}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Friday",start_time:"14:00:00"}} item={friday.h_14_15}/>
@@ -960,9 +502,12 @@ export default function ScheduleByTeacher() {
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Friday",start_time:"10:00:00"}} item={friday.h_10_11}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Friday",start_time:"09:00:00"}} item={friday.h_9_10}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Friday",start_time:"08:00:00"}} item={friday.h_8_9}/>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Friday",start_time:"07:00:00"}} item={friday.h_7_8}/>
                                 <th className="align-middle">الجمعة</th>
                             </tr>
                             <tr>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Saturday",start_time:"18:00:00"}} item={saturday.h_18_19}/>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Saturday",start_time:"17:00:00"}} item={saturday.h_17_18}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Saturday",start_time:"16:00:00"}} item={saturday.h_16_17}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Saturday",start_time:"15:00:00"}} item={saturday.h_15_16}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Saturday",start_time:"14:00:00"}} item={saturday.h_14_15}/>
@@ -972,6 +517,7 @@ export default function ScheduleByTeacher() {
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Saturday",start_time:"10:00:00"}} item={saturday.h_10_11}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Saturday",start_time:"09:00:00"}} item={saturday.h_9_10}/>
                                     <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal} settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Saturday",start_time:"08:00:00"}} item={saturday.h_8_9}/>
+                                    <TdTeacher setitems={setItems} settoadd={setToAddChild} settoaddmodal={setToAddModal}  settoedit={setToEditChild} settoeditmodal={setToEditModal} data={{teacher_id:id,weekday:"Saturday",start_time:"07:00:00"}} item={saturday.h_7_8}/>
                                 <th className="align-middle">السبت</th>
                             </tr>
                         </tbody>
@@ -980,12 +526,12 @@ export default function ScheduleByTeacher() {
                 <AddSessionByTeacherModal
              toadd={toAdd}
        show={modalShow}
-       onHide={() => {setModalShow(false);refreshItems()}}
+       onHide={() => {setModalShow(false)}}
      />
            <EditSessionByTeacherModal
            toedit={toEdit}
      show={editModalShow}
-     onHide={() => {setEditModalShow(false);refreshItems()}}
+     onHide={() => {setEditModalShow(false)}}
     />
     <ReactToPrint
         trigger={() => <button type='button' className='btn btn-primary m-2'>Imprimer</button>}
@@ -999,20 +545,25 @@ export default function ScheduleByTeacher() {
                     <table className="table table-bordered text-center">
                         <thead>
                             <tr className="bg-light-gray">
-                                <th>17 - 16</th>
-                                <th>16 - 15</th>
-                                <th>15 - 14</th>
-                                <th>14 - 13</th>
-                                <th>13 - 12</th>
-                                <th>12 - 11</th>
-                                <th>11 - 10</th>
-                                <th>10 - 9</th>
-                                <th>9 - 8</th>
+                                <th>18 - 19</th>
+                                <th>17 - 18</th>
+                                <th>16 - 17</th>
+                                <th>15 - 16</th>
+                                <th>14 - 15</th>
+                                <th>13 - 14</th>
+                                <th>12 - 13</th>
+                                <th>11 - 12</th>
+                                <th>10 - 11</th>
+                                <th>9 - 10</th>
+                                <th>8 - 9</th>
+                                <th>7 - 8</th>
                                 <th />
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                    <TdToPrint item={monday.h_18_19}/>
+                                    <TdToPrint item={monday.h_17_18}/>
                                     <TdToPrint item={monday.h_16_17}/>
                                     <TdToPrint item={monday.h_15_16}/>
                                     <TdToPrint item={monday.h_14_15}/>
@@ -1022,9 +573,12 @@ export default function ScheduleByTeacher() {
                                     <TdToPrint item={monday.h_10_11}/>
                                     <TdToPrint item={monday.h_9_10}/>
                                     <TdToPrint item={monday.h_8_9}/>
+                                    <TdToPrint item={monday.h_7_8}/>
                              <th className="align-middle">الإثنين</th>
                             </tr>
                             <tr>
+                                    <TdToPrint item={tuesday.h_18_19}/>
+                                    <TdToPrint item={tuesday.h_17_18}/>
                                     <TdToPrint item={tuesday.h_16_17}/>
                                     <TdToPrint item={tuesday.h_15_16}/>
                                     <TdToPrint item={tuesday.h_14_15}/>
@@ -1034,9 +588,12 @@ export default function ScheduleByTeacher() {
                                     <TdToPrint item={tuesday.h_10_11}/>
                                     <TdToPrint item={tuesday.h_9_10}/>
                                     <TdToPrint item={tuesday.h_8_9}/>
-                                <th className="align-middle">الثلثاء</th>
+                                    <TdToPrint item={tuesday.h_7_8}/>
+                                <th className="align-middle">الثلاثاء</th>
                             </tr>
                             <tr>
+                                    <TdToPrint item={wednesday.h_18_19}/>
+                                    <TdToPrint item={wednesday.h_17_18}/>
                                     <TdToPrint item={wednesday.h_16_17}/>
                                     <TdToPrint item={wednesday.h_15_16}/>
                                     <TdToPrint item={wednesday.h_14_15}/>
@@ -1046,9 +603,12 @@ export default function ScheduleByTeacher() {
                                     <TdToPrint item={wednesday.h_10_11}/>
                                     <TdToPrint item={wednesday.h_9_10}/>
                                     <TdToPrint item={wednesday.h_8_9}/>
+                                    <TdToPrint item={wednesday.h_7_8}/>
                                 <th className="align-middle">الإربعاء</th>
                             </tr>
                             <tr>
+                                    <TdToPrint item={thursday.h_18_19}/>
+                                    <TdToPrint item={thursday.h_17_18}/>
                                     <TdToPrint item={thursday.h_16_17}/>
                                     <TdToPrint item={thursday.h_15_16}/>
                                     <TdToPrint item={thursday.h_14_15}/>
@@ -1058,9 +618,12 @@ export default function ScheduleByTeacher() {
                                     <TdToPrint item={thursday.h_10_11}/>
                                     <TdToPrint item={thursday.h_9_10}/>
                                     <TdToPrint item={thursday.h_8_9}/>
+                                    <TdToPrint item={thursday.h_7_8}/>
                                 <th className="align-middle">الخميس</th>
                             </tr>
                             <tr>
+                                    <TdToPrint item={friday.h_18_19}/>
+                                    <TdToPrint item={friday.h_17_18}/>
                                     <TdToPrint item={friday.h_16_17}/>
                                     <TdToPrint item={friday.h_15_16}/>
                                     <TdToPrint item={friday.h_14_15}/>
@@ -1070,9 +633,12 @@ export default function ScheduleByTeacher() {
                                     <TdToPrint item={friday.h_10_11}/>
                                     <TdToPrint item={friday.h_9_10}/>
                                     <TdToPrint item={friday.h_8_9}/>
+                                    <TdToPrint item={friday.h_7_8}/>
                                 <th className="align-middle">الجمعة</th>
                             </tr>
                             <tr>
+                                    <TdToPrint item={saturday.h_18_19}/>
+                                    <TdToPrint item={saturday.h_17_18}/>
                                     <TdToPrint item={saturday.h_16_17}/>
                                     <TdToPrint item={saturday.h_15_16}/>
                                     <TdToPrint item={saturday.h_14_15}/>
@@ -1082,6 +648,7 @@ export default function ScheduleByTeacher() {
                                     <TdToPrint item={saturday.h_10_11}/>
                                     <TdToPrint item={saturday.h_9_10}/>
                                     <TdToPrint item={saturday.h_8_9}/>
+                                    <TdToPrint item={saturday.h_7_8}/>
                                 <th className="align-middle">السبت</th>
                             </tr>
                         </tbody>

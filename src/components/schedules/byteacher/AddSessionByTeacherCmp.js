@@ -188,15 +188,19 @@ export default function AddSessionByTeacherCmp(props) {
                       <div className="input-group">
                              <select name="end_time" onChange={handleInput} value={inputs.end_time} className='form-control'>
                              <option value="">Sélectionner fin</option>
-                             {inputs.start_time < "09:00:00" && "09" - inputs.start_time.substr(0,2) < 5 ? <option value="09:00:00">09:00</option> :''}
-                           {inputs.start_time < "10:00:00" && "10" - inputs.start_time.substr(0,2) < 5 ? <option value="10:00:00">10:00</option> :''}
-                           {inputs.start_time < "11:00:00" && "11" - inputs.start_time.substr(0,2) < 5 ? <option value="11:00:00">11:00</option> :''}
-                           {inputs.start_time < "12:00:00" && "12" - inputs.start_time.substr(0,2) < 5 ? <option value="12:00:00">12:00</option> :''}
-                           {inputs.start_time < "13:00:00" && "13" - inputs.start_time.substr(0,2) < 5 ? <option value="13:00:00">13:00</option> :''}
-                           {inputs.start_time < "14:00:00" && "14" - inputs.start_time.substr(0,2) < 5 ? <option value="14:00:00">14:00</option> :''}
-                           {inputs.start_time < "15:00:00" && "15" - inputs.start_time.substr(0,2) < 5 ? <option value="15:00:00">15:00</option> :''}
-                           {inputs.start_time < "16:00:00" && "16" - inputs.start_time.substr(0,2) < 5 ? <option value="16:00:00">16:00</option> :''}
-                           {"17" - inputs.start_time.substr(0,2) < 5 ? <option value="17:00:00">17:00</option>:''}
+                             {inputs.start_time < "07:00:00" && "07" - inputs.start_time.substring(0,2) < 5 ? <option value="07:00:00">07:00</option> :''}
+                             {inputs.start_time < "08:00:00" && "08" - inputs.start_time.substring(0,2) < 5 ? <option value="08:00:00">08:00</option> :''}
+                             {inputs.start_time < "09:00:00" && "09" - inputs.start_time.substring(0,2) < 5 ? <option value="09:00:00">09:00</option> :''}
+                           {inputs.start_time < "10:00:00" && "10" - inputs.start_time.substring(0,2) < 5 ? <option value="10:00:00">10:00</option> :''}
+                           {inputs.start_time < "11:00:00" && "11" - inputs.start_time.substring(0,2) < 5 ? <option value="11:00:00">11:00</option> :''}
+                           {inputs.start_time < "12:00:00" && "12" - inputs.start_time.substring(0,2) < 5 ? <option value="12:00:00">12:00</option> :''}
+                           {inputs.start_time < "13:00:00" && "13" - inputs.start_time.substring(0,2) < 5 ? <option value="13:00:00">13:00</option> :''}
+                           {inputs.start_time < "14:00:00" && "14" - inputs.start_time.substring(0,2) < 5 ? <option value="14:00:00">14:00</option> :''}
+                           {inputs.start_time < "15:00:00" && "15" - inputs.start_time.substring(0,2) < 5 ? <option value="15:00:00">15:00</option> :''}
+                           {inputs.start_time < "16:00:00" && "16" - inputs.start_time.substring(0,2) < 5 ? <option value="16:00:00">16:00</option> :''}
+                           {inputs.start_time < "17:00:00" && "17" - inputs.start_time.substring(0,2) < 5 ? <option value="17:00:00">17:00</option> :''}
+                           {inputs.start_time < "18:00:00" && "17" - inputs.start_time.substring(0,2) < 5 ? <option value="18:00:00">18:00</option> :''}
+                           {"19" - inputs.start_time.substring(0,2) < 5 ? <option value="19:00:00">19:00</option>:''}
                               </select>
                               </div>
                               <small className='text-danger'>{errorsList.end_time}</small>

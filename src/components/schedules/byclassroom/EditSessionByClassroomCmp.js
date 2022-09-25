@@ -133,7 +133,7 @@ export default function EditSessionByClassroomCmp(props) {
           }else{
             try{
               await db.sessions.update(props.toedit.id,data)
-              Swal.fire("Success","updated with success","success");
+              Swal.fire("Success","Modifiée avec succès","success");
             }
               catch(error){
                 Swal.fire("Success",error.inner.message,"success");
